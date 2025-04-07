@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <style>
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
+  }
+
+  nav ul {
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 10px 20px;
+  }
+
+  .typing-animation {
+    font-size: 24px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-profile {
+    width: 80%;
+    height: auto;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+
+  .contact-info {
+    width: 90%;
+  }
+
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            color: gold;
+        }
+
+        body {
+            background:url(bg11.gif) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .logo {
+            width: 80px;
+            top: 50px;
+            display: inline-block;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            z-index: 1000;
+            box-shadow: 0 0 20px gold;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 0px 50px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: gold;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 0 0 10px rgba(237, 241, 5, 0.933);
+        }
+
+        nav ul li a:hover {
+            color: gold;
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .typing-animation {
+            font-size: 40px;
+            font-weight: bold;
+            color: gold;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: none;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards;
+        }
+
+        .top-text {
+            margin-bottom: 5px;
+            animation-delay: 0s;
+        }
+
+        .bottom-text {
+            margin-top: 40px;
+            animation-delay: 1s;
+        }
+
+        .mbottom-text {
+            margin-top: 40px;
+            animation-delay: 2s;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(246, 222, 1, 10);
+        }
+
+        .about-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 5%;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-profile {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: 0 0 15px rgba(246, 222, 1, 0.7);
+        }
+
+        .about-text-box {
+            max-width: 500px;
+            text-align: left;
+        }
+
+       
+        .projects-section {
+            padding: 200px 5%;
+            
+            text-align: center;
+        }
+
+        .projects-section h1 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: gold;
+        }
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .project-card {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            padding: 20px;
+            border-radius: 25px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .project-card h2.title {
+            font-size: 26px;
+            color: gold;
+        }
+
+        .project-card h2.name,
+        .project-card p {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover {
+            background-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .project-card:hover h2.title {
+            display: none;
+        }
+
+        .project-card:hover h2.name,
+        .project-card:hover p {
+            opacity: 1;
+        }
+
+        .project-card img.project-image {
+    width: 25%;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: none;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.project-card:hover img.project-image {
+    display: block;
+}
+
+.project-card .info {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s ease;
+}
+
+.project-card:hover .info,
+.project-card.active .info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+        .contact-section {
+  padding: 200px 5%;
+  
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.contact-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: gold;
+  
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 15px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid gold;
+  background-color: transparent;
+  color: gold;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: white;
+  box-shadow: 0 0 10px gold;
+}
+
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+.contact-info {
+  max-width: 300px;
+  text-align: left;
+  font-size: 18px;
+  animation: fadeInUp 2s ease forwards;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  color: #ffd700cc;
+}
+
+.center-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  filter: drop-shadow(0 0 5px gold);
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px gold;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img src="loggo.png.png" alt="logo" class="logo">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="Home" class="center-content">
+            <h1 class="typing-animation top-text">Hello there!!</h1>
+            <img src="pfpf.png" alt="pfp" class="profile-image">
+            <h1 class="typing-animation bottom-text">I am Nikitha Manoj</h1>
+            <h1 class="typing-animation mbottom-text">Welcome to my portfolio website</h1>
+        </section>
+
+        <!-- About Section -->
+        <section id="About" class="about-wrapper">
+            <div class="about-container">
+                <img src="ampf.png" alt="Profile Picture" class="about-profile">
+                <div class="about-text-box">
+                    <h1 style="font-size: 36px; margin-bottom: 15px;">About Me</h1>
+                    <h3 style="font-style: italic; color: #ffd700a8; margin-bottom: 20px;">
+                        Passionate Learner | Aspiring Web Developer | CSE Student
+                    </h3>
+                    <p>
+                        I'm <strong>Nikitha Manoj</strong>, a B.Tech Computer Science Engineering student at Amrita Vishwa Vidyapeetham.
+                        I discovered my love for coding during senior secondary school, and ever since, I've been deeply invested in learning
+                        new technologies and solving problems through code.
+                    </p>
+                    <br />
+                    <p>
+                        In addition to my academic pursuits, I enjoy expressing creativity through drawing and baking, and staying active with
+                        badminton. I believe in continuous learning and am currently building a strong foundation in web development and software
+                        design.
+                    </p>
+                    <div class="about-text-box">
+                        <br>
+                        <a href="Resume.pdf" target="_blank" style="
+                        display: inline-block;
+                        margin-top: 20px;
+                        padding: 10px 25px;
+                        background-color: gold;
+                        color: black;
+                        font-weight: bold;
+                        text-decoration: none;
+                        border-radius: 10px;
+                        box-shadow: 0 0 10px gold;
+                        transition: transform 0.2s;">
+                        View Resume
+                        </a>
+                        
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section id="Projects" class="projects-section">
+            <h1>My Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card" onclick="this.classList.toggle('active')">
+                    <h2 class="title">Project 1</h2>
+                    <h2 class="name">Number Guessing Game</h2>
+                    <img src="project1.png" class="project-image" alt="Number Guessing Game" >
+                    <p >A fun Python terminal game where users try to guess a randomly generated number.</p><br><br>
+                    <p class="name"><a href="https://github.com/NikithaManoj57/Number-guessing-python" style="text-decoration: none;"><b>View code here</b></a></p>
+                </div>
+                <div class="project-card" onclick="this.classList.toggle('active')">
+                    <h2 class="title">Project 2</h2>
+                    <h2 class="name">To-Do List App</h2>
+                    <img src="project2.png" class="project-image" alt="To-do list" >
+                    <p>A basic command-line task manager in Python that lets users add and delete daily tasks.</p><br><br>
+                    <p class="name"><a href="https://github.com/NikithaManoj57/To-do-task-management" style="text-decoration: none;"><b>View code here</b></a></p>
+                </div>
+                <div class="project-card" onclick="this.classList.toggle('active')">
+                    <h2 class="title">Project 3</h2>
+                    <h2 class="name">Password Generator</h2>
+                    <img src="project3.png" class="project-image" alt="Password Generator" >
+                    <p>Generates strong and secure passwords using Python’s random module.</p><br><br>
+                    <p class="name"><a href="https://github.com/NikithaManoj57/Random-Password-Generator" style="text-decoration: none;"><b>View code here</b></a></p>
+                </div>
+                
+                  
+            </div>
+        </section>
+
+        <section id="Contact" class="contact-section">
+            <h1 class="contact-title">Get In Touch</h1>
+            <div class="center-contact">
+              <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+          
+              <div class="social-icons">
+                <a href="https://github.com/NikithaManoj57" target="_blank"><img src="ghicon (2).png" alt="GitHub" /></a>
+                <a href="mailto:nikitha1664@gmail.com" target="_blank"><img src="mail icon.png" alt="Email" /></a>
+                <a href="http://linkedin.com/in/contactnikithamanoj" target="_blank"><img src="linkdin icon.png" alt="LinkedIn" /></a>
+                <a href="https://www.instagram.com/just_.nikitha?igsh=Y3djbW1odGg0dTd4&utm_source=qr" target="_blank"><img src="insta icon.png" alt="Instagram" /></a>
+              </div>
+            </div>
+          </section>
+          
+    </div>
+
+    <footer style="
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    color: gold;
+    font-size: 16px;
+    box-shadow: 0 -1px 10px rgba(255, 215, 0, 0.2);
+    margin-top: 100px;">
+  © 2025 Nikitha Manoj | <a href="#About" style="color: gold; text-decoration: underline;">About</a> |
+  <a href="#Contact" style="color: gold; text-decoration: underline;">Contact</a>
+</footer>
+
+</body>
+</html>
