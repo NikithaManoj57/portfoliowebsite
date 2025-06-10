@@ -256,7 +256,7 @@
 
         .project-card h2.name,
         .project-card p {
-            opacity: 0;
+            opacity: 1;
             transition: opacity 0.3s ease;
         }
 
@@ -278,7 +278,7 @@
     height: auto;
     border-radius: 20px;
     margin-bottom: 10px;
-    display: none;
+    display: block;
     transition: 0.4s ease-in-out;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
 }
@@ -288,8 +288,8 @@
 }
 
 .project-card .info {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: 0.3s ease;
 }
 
@@ -483,21 +483,21 @@
         <section id="Projects" class="projects-section">
             <h1>My Projects</h1>
             <div class="projects-grid">
-                <div class="project-card" onclick="this.classList.toggle('active')">
+                <div class="project-card" >
                     <h2 class="title">Project 1</h2>
                     <h2 class="name">Number Guessing Game</h2>
                     <img src="project1.png" class="project-image" alt="Number Guessing Game" >
                     <p >A fun Python terminal game where users try to guess a randomly generated number.</p><br><br>
                     <p class="name"><a href="https://github.com/NikithaManoj57/Number-guessing-python" style="text-decoration: none;"><b>View code here</b></a></p>
                 </div>
-                <div class="project-card" onclick="this.classList.toggle('active')">
+                <div class="project-card" >
                     <h2 class="title">Project 2</h2>
                     <h2 class="name">To-Do List App</h2>
                     <img src="project2.png" class="project-image" alt="To-do list" >
                     <p>A basic command-line task manager in Python that lets users add and delete daily tasks.</p><br><br>
                     <p class="name"><a href="https://github.com/NikithaManoj57/To-do-task-management" style="text-decoration: none;"><b>View code here</b></a></p>
                 </div>
-                <div class="project-card" onclick="this.classList.toggle('active')">
+                <div class="project-card" >
                     <h2 class="title">Project 3</h2>
                     <h2 class="name">Password Generator</h2>
                     <img src="project3.png" class="project-image" alt="Password Generator" >
@@ -520,27 +520,4 @@
               </form>
           
               <div class="social-icons">
-                <a href="https://github.com/NikithaManoj57" target="_blank"><img src="ghicon (2).png" alt="GitHub" /></a>
-                <a href="mailto:nikitha1664@gmail.com" target="_blank"><img src="mail icon.png" alt="Email" /></a>
-                <a href="http://linkedin.com/in/contactnikithamanoj" target="_blank"><img src="linkdin icon.png" alt="LinkedIn" /></a>
-                <a href="https://www.instagram.com/just_.nikitha?igsh=Y3djbW1odGg0dTd4&utm_source=qr" target="_blank"><img src="insta icon.png" alt="Instagram" /></a>
-              </div>
-            </div>
-          </section>
-          
-    </div>
-
-    <footer style="
-    text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    color: gold;
-    font-size: 16px;
-    box-shadow: 0 -1px 10px rgba(255, 215, 0, 0.2);
-    margin-top: 100px;">
-  © 2025 Nikitha Manoj | <a href="#About" style="color: gold; text-decoration: underline;">About</a> |
-  <a href="#Contact" style="color: gold; text-decoration: underline;">Contact</a>
-</footer>
-
-</body>
-</html>
+                <a href="https://github.com/NikithaManoj57" target="_blank"><img src="
